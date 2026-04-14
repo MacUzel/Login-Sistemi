@@ -1,10 +1,10 @@
-# 🔐 MiniApp — Login + Dashboard (Vanilla JS)
+# MiniApp — Login + Dashboard (Vanilla JS)
 
 Saf HTML, CSS ve JavaScript ile yapılmış küçük bir web uygulaması. Login sistemiyle başladı, zamanla dashboard ekleyerek To-Do listesi ve not alma özelliklerine kavuştu. Herhangi bir framework kullanılmadı.
 
 ---
 
-## 📸 Önizleme
+## Önizleme
 
 > `index.html` dosyasını tarayıcıda açmak yeterli — kurulum gerekmez.
 
@@ -14,7 +14,7 @@ Demo hesap bilgileri:
 
 ---
 
-## ✨ Özellikler
+## Özellikler
 
 **Login Sayfası (`index.html`)**
 - E-posta ve şifre doğrulaması (boş alan, format, minimum uzunluk)
@@ -42,7 +42,7 @@ Demo hesap bilgileri:
 
 ---
 
-## 📁 Proje Yapısı
+## Proje Yapısı
 
 ```
 mini-app/
@@ -62,13 +62,13 @@ mini-app/
 | Teknoloji | Kullanım Amacı |
 |-----------|----------------|
 | HTML5     | Sayfa yapısı |
-| CSS3      | Stiller, animasyonlar, responsive layout |
+| CSS3     | Stiller, animasyonlar, responsive layout |
 | JavaScript (Vanilla) | Tüm uygulama mantığı |
 | LocalStorage | Kullanıcı verilerini tarayıcıda saklama |
 
 ---
 
-## 🚀 Kurulum & Çalıştırma
+## Kurulum & Çalıştırma
 
 1. Repoyu klonla:
    ```bash
@@ -84,7 +84,7 @@ Sunucu, build aracı ya da kurulum gerektirmiyor.
 
 ---
 
-## 🗺 Uygulama Akışı
+## Uygulama Akışı
 
 ```
 index.html (Login)
@@ -106,7 +106,7 @@ dashboard.html
 
 ---
 
-## 📚 Bu Projede Öğrendiklerim
+## Bu Projede Öğrendiklerim
 
 Projeyi geliştirirken birkaç şeyi daha iyi anladım:
 
@@ -120,20 +120,10 @@ Projeyi geliştirirken birkaç şeyi daha iyi anladım:
 
 ---
 
-## 🔮 Geliştirilebilecek Yönler
+## Geliştirilebilecek Yönler
 
 - Kayıt (register) formu eklenebilir
 - Notlara düzenleme özelliği eklenebilir
 - Todo'lara öncelik veya tarih bilgisi eklenebilir
 - Gerçek bir backend ile (Node.js + Express + veritabanı) entegre edilebilir
 - Şifreler sunucu tarafında hash'lenebilir (bcrypt vb.)
-
----
-
-## 📄 Lisans
-
-MIT — istediğin gibi kullanabilirsin.
-
----
-
-*Öğrenme sürecinde adım adım geliştirilen bir proje. Başlangıçta sadece login formuydu.*

@@ -1,0 +1,437 @@
+/* =============================================
+   dashboard.css — Dashboard'a özel stiller
+   style.css'teki değişkenler burada da geçerli
+   ============================================= */
+
+/* ─── BODY OVERRIDE ──────────────────────────────────────────
+   Login sayfasından farklı olarak dashboard'da gradient yok;
+   açık gri bir arka plan kullanıyoruz.
+   ─────────────────────────────────────────────────────────── */
+.dashboard-body {
+  background: #f0f2f5;
+  display: block;       /* login'deki flex'i override et */
+  padding: 0;
+  min-height: 100vh;
+}
+
+/* ─── TOPBAR (Üst Menü) ───────────────────────────────────── */
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #fff;
+  padding: 0 1.5rem;
+  height: 58px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* Sol: Logo + İsim */
+.topbar__brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.topbar__brand svg {
+  width: 20px;
+  height: 20px;
+  opacity: 0.9;
+}
+
+/* Sağ: Kullanıcı selamı + logout */
+.topbar__user {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.topbar__greeting {
+  font-size: 0.85rem;
+  opacity: 0.92;
+}
+
+/* Mobilde uzun e-posta taşmasın */
+.topbar__greeting strong {
+  max-width: 160px;
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  vertical-align: bottom;
+}
+
+/* Logout butonu */
+.btn-logout {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  color: #fff;
+  border-radius: 6px;
+  padding: 0.35rem 0.75rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s;
+}
+
+.btn-logout svg {
+  width: 15px;
+  height: 15px;
+}
+
+.btn-logout:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-1px);
+}
+
+/*  MAIN LAYOUT ─────────────────────────────────────────── */
+.main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1.75rem 1.5rem;
+}
+
+/*  PANEL (Her iki bölüm için ortak kart) ───────────────── */
+.panel {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.05);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.panel__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1.5px solid #f0f0f0;
+}
+
+.panel__title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+.panel__title svg {
+  width: 18px;
+  height: 18px;
+  color: var(--color-primary);
+}
+
+/* Küçük sayaç etiketi */
+.panel__badge {
+  font-size: 0.75rem;
+  font-weight: 600;
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+/* ─── ORTAK GİRİŞ ELEMANLARI ──────────────────────────────── */
+
+/* Yan yana input + buton satırı */
+.input-row {
+  display: flex;
+  gap: 0.5rem;
+}
+
+/* Tek satır metin girişi */
+.text-input {
+  flex: 1;
+  padding: 0.6rem 0.875rem;
+  font-size: 0.9rem;
+  font-family: inherit;
+  border: 1.5px solid var(--color-border);
+  border-radius: 6px;
+  outline: none;
+  color: var(--color-text-primary);
+  background: #fafafa;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.text-input:focus {
+  border-color: var(--color-border-focus);
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.12);
+  background: #fff;
+}
+
+/* Ekle butonu */
+.btn-add {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.6rem 1rem;
+  background: var(--color-primary);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s;
+  white-space: nowrap;
+}
+
+.btn-add svg {
+  width: 16px;
+  height: 16px;
+}
+
+.btn-add:hover {
+  background: var(--color-primary-hover);
+  transform: translateY(-1px);
+}
+
+/* ─── BOŞ DURUM ───────────────────────────────────────────── */
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 2rem 1rem;
+  color: var(--color-text-placeholder);
+  text-align: center;
+  font-size: 0.875rem;
+}
+
+.empty-state svg {
+  width: 36px;
+  height: 36px;
+  opacity: 0.4;
+}
+
+.empty-state.hidden {
+  display: none;
+}
+
+/* ─── TO-DO LİSTESİ ───────────────────────────────────────── */
+.todo-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  /* Uzun listelerde kaydırma */
+  max-height: 420px;
+  overflow-y: auto;
+  padding-right: 2px; /* Scrollbar boşluğu */
+}
+
+/* Tek görev satırı */
+.todo-item {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  padding: 0.6rem 0.75rem;
+  background: #f9fafb;
+  border: 1.5px solid #f0f0f0;
+  border-radius: 8px;
+  transition: border-color 0.2s, background 0.2s;
+  animation: fadeIn 0.2s ease;
+}
+
+.todo-item:hover {
+  border-color: #e0e0e0;
+  background: #f4f5f7;
+}
+
+/* Tamamlandı durumu */
+.todo-item.completed {
+  background: #f0fdf4;
+  border-color: #bbf7d0;
+}
+
+.todo-item.completed .todo-text {
+  text-decoration: line-through;
+  color: var(--color-text-placeholder);
+}
+
+/* Checkbox */
+.todo-checkbox {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--color-primary);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.todo-text {
+  flex: 1;
+  font-size: 0.9rem;
+  color: var(--color-text-primary);
+  word-break: break-word;
+}
+
+/* Sil butonu */
+.btn-delete {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #d1d5db;
+  padding: 0.2rem;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  transition: color 0.2s, background 0.2s;
+  flex-shrink: 0;
+}
+
+.btn-delete svg {
+  width: 15px;
+  height: 15px;
+}
+
+.btn-delete:hover {
+  color: var(--color-error);
+  background: var(--color-error-bg);
+}
+
+/* ─── NOT ALMA ────────────────────────────────────────────── */
+
+/* Not ekleme formu */
+.note-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.text-area {
+  padding: 0.6rem 0.875rem;
+  font-size: 0.9rem;
+  font-family: inherit;
+  border: 1.5px solid var(--color-border);
+  border-radius: 6px;
+  outline: none;
+  color: var(--color-text-primary);
+  background: #fafafa;
+  resize: vertical;
+  min-height: 80px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.text-area:focus {
+  border-color: var(--color-border-focus);
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.12);
+  background: #fff;
+}
+
+/* Not kartları ızgarası */
+.notes-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+  max-height: 420px;
+  overflow-y: auto;
+  padding-right: 2px;
+}
+
+/* Tek not kartı */
+.note-card {
+  background: #fffbeb;
+  border: 1.5px solid #fde68a;
+  border-radius: 8px;
+  padding: 0.75rem 0.875rem;
+  animation: fadeIn 0.2s ease;
+}
+
+.note-card__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.375rem;
+}
+
+.note-card__title {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #92400e;
+}
+
+.note-card__content {
+  font-size: 0.875rem;
+  color: #78350f;
+  line-height: 1.55;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.note-card__date {
+  margin-top: 0.5rem;
+  font-size: 0.72rem;
+  color: #a16207;
+  opacity: 0.75;
+}
+
+/* ─── ANIMASYON ───────────────────────────────────────────── */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ─── SCROLLBAR STİLİ (Webkit) ────────────────────────────── */
+.todo-list::-webkit-scrollbar,
+.notes-grid::-webkit-scrollbar {
+  width: 4px;
+}
+
+.todo-list::-webkit-scrollbar-track,
+.notes-grid::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.todo-list::-webkit-scrollbar-thumb,
+.notes-grid::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 99px;
+}
+
+/* ─── RESPONSİVE ──────────────────────────────────────────── */
+@media (max-width: 720px) {
+  .main {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
+
+  .topbar__greeting {
+    display: none; /* Küçük ekranlarda yer aç */
+  }
+
+  .panel {
+    padding: 1.125rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .topbar {
+    padding: 0 1rem;
+  }
+
+  .btn-logout span {
+    display: none; /* Çok küçük ekranda sadece ikon */
+  }
+}

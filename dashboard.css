@@ -1,15 +1,10 @@
-/* =============================================
-   dashboard.css — Dashboard'a özel stiller
-   style.css'teki değişkenler burada da geçerli
-   ============================================= */
-
 /* ─── BODY OVERRIDE ──────────────────────────────────────────
    Login sayfasından farklı olarak dashboard'da gradient yok;
    açık gri bir arka plan kullanıyoruz.
    ─────────────────────────────────────────────────────────── */
 .dashboard-body {
   background: #f0f2f5;
-  display: block;       /* login'deki flex'i override et */
+  display: block;
   padding: 0;
   min-height: 100vh;
 }
